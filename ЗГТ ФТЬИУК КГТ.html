@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ember Run — Платформер</title>
+<title>Amber Run — Платформер</title>
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -127,7 +127,7 @@
   <canvas id="gameCanvas"></canvas>
 
   <div id="overlay">
-    <h1 id="overlayTitle">EMBER RUN</h1>
+    <h1 id="overlayTitle">Amber RUN</h1>
     <div class="subtitle" id="overlaySubtitle">Процедурный платформер</div>
     <div class="stats" id="overlayStats" style="display:none"></div>
     <button class="btn" id="startBtn">НАЧАТЬ ИГРУ</button>
@@ -177,7 +177,7 @@ canvas.width = W; canvas.height = H;
 // ===================== СИСТЕМА РЕКОРДОВ =====================
 function getBestScore() {
   try {
-    return parseInt(localStorage.getItem('emberRunBestScore')) || 0;
+    return parseInt(localStorage.getItem('AmberRunBestScore')) || 0;
   } catch(e) {
     return 0;
   }
@@ -185,7 +185,7 @@ function getBestScore() {
 
 function setBestScore(score) {
   try {
-    localStorage.setItem('emberRunBestScore', String(score));
+    localStorage.setItem('AmberRunBestScore', String(score));
   } catch(e) {
     // ignore
   }
@@ -301,13 +301,13 @@ downloadBtn.addEventListener('click', function() {
   // Создаём ссылку для скачивания
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'Ember-run-play.html';
+  a.download = 'Amber-run-play.html';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
   
-  showToast('✅ Игра сохранена как Ember-run-play.html');
+  showToast('✅ Игра сохранена как Amber-run-play.html');
 });
 
 // ===================== ПОЛНЫЙ ЭКРАН =====================
@@ -1283,7 +1283,7 @@ function gameLoop() {
   drawHUD();
 }
 
-showOverlay('EMBER RUN', 'Процедурный платформер', false);
+showOverlay('Amber RUN', 'Процедурный платформер', false);
 gameLoop();
 </script>
 </body>
